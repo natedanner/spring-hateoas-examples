@@ -46,10 +46,9 @@ class ManagerRepresentationModelAssembler extends SimpleIdentifiableRepresentati
 		super.addLinks(resource);
 
 		resource.getContent().getId() //
-				.ifPresent(id -> { //
+				.ifPresent(id -> //
 					// Add custom link to find all managed employees
-					resource.add(linkTo(methodOn(EmployeeController.class).findEmployees(id)).withRel("employees"));
-				});
+					resource.add(linkTo(methodOn(EmployeeController.class).findEmployees(id)).withRel("employees")));
 	}
 
 	/**
